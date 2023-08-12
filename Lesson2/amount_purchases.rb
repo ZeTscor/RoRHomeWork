@@ -10,7 +10,7 @@ loop do
   puts 'Количество товара'
   count = gets.chomp.to_f
   puts 'что остановиться введите "СТОП"'
-  storage[name] = {price: price, count: count}
+  storage[name] = { price: price, count: count }
 end
 full_prices = 0
 
