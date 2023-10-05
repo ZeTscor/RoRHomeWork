@@ -10,6 +10,7 @@ module InstanceCounter
     end
 
     def increase_instances
+      @instances = 0
       @instances += 1
     end
   end
