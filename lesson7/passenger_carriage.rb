@@ -8,10 +8,7 @@ class PassengerCarriage < Carriage
   end
 
   def take_seats
-    if @seats_total == @seats_used
-      raise ArgumentError, "No vacant tables"
-    else
-      @seats_used += 1
-    end
+    raise ArgumentError, "No seats left" if free_place - 1 < 0
+    @used_place += 1
   end
 end
