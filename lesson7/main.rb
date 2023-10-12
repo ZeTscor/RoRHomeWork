@@ -266,11 +266,9 @@ def carriages_add
   carriage_type = train.type == :passenger ? PassengerCarriage : CargoCarriage
 
   carriage_count.times do
-    puts "Enter the number of cars you want to add"
-    carriage_number = gets.chomp.to_i
     puts "Enter free seats in the carriage"
     carriage_seats = gets.chomp.to_i
-    carriage = carriage_type.new(carriage_seats, carriage_number)
+    carriage = carriage_type.new(carriage_seats)
     train.attach_carriage(carriage)
   end
   puts "#{carriage_count} carriage(s) have been added to Train #{train.number}."

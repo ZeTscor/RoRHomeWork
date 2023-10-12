@@ -1,8 +1,8 @@
 require_relative 'carriage'
 
 class CargoCarriage < Carriage
-  def initialize(capacity, number)
-    super(:cargo, number, capacity)
+  def initialize(capacity)
+    super(:cargo, capacity)
   end
 
   def take_capacity(use_capacity)

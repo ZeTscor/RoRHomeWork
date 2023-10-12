@@ -2,9 +2,7 @@ require_relative 'carriage'
 
 class PassengerCarriage < Carriage
   def initialize(seats)
-    @type = :passenger
-    @seats_total = seats.to_i
-    @seats_used = 0
+    super(:passenger, seats)
   end
 
   def take_seats

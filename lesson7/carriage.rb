@@ -5,9 +5,8 @@ class Carriage
 
   attr_reader :type
 
-  def initialize(type, number, total_place)
+  def initialize(type,total_place)
     @type = type
-    @number = number
     @total_place = total_place
     @used_place = 0
   end
