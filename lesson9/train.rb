@@ -93,12 +93,4 @@ class Train
     @carriages.each(&block)
   end
 
-  protected
-
-  def validate!
-    raise "Number can't be nil" if number.nil?
-    return unless number !~ TRAIN_FORMAT_NUMBER
-
-    raise 'The number format does not match the template'
-  end
 end
