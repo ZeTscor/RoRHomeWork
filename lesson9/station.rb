@@ -10,8 +10,8 @@ class Station
 
   attr_accessor_with_history :trains
 
-  validate :title, :presence
-  validate :title, :format, STATION_NAME_FORMAT
+  validate :name, :presence
+  validate :name, :format, STATION_NAME_FORMAT
 
   @@all = []
 
