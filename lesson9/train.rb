@@ -8,18 +8,19 @@ class Train
   attr_reader :number, :type, :speed, :carriages, :current_station
 
   @@all = []
+  attr_accessor_with_history :route
 
-  TRAIN_FORMAT_NUMBER = /^[a-zA-Z\d]-?[a-zA-Z\d]{2}$/.freeze
-  validate :number, :presence
+  TRAIN_FORMAT_NUMBER = /^[a-zA-Z\d]-?[a-zA-Z\d]{2}$/
   validate :number, :format, TRAIN_FORMAT_NUMBER
+  validate :number, :presence
 
   def initialize(number)
     @number = number
-    validate!
     @speed = 0
     @carriages = []
     @@all.push(self)
     register_instance
+    validate!
   end
 
   def self.find(num)
@@ -80,13 +81,6 @@ class Train
 
     current_index = @route.stations.index(@current_station)
     @route.stations[current_index + 1] if current_index < @route.stations.size - 1
-  end
-
-  def valid?
-    validate!
-    true
-  rescue StandardError
-    false
   end
 
   def each_train(&block)
