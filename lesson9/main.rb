@@ -193,6 +193,8 @@ def create_train
     else
       raise ArgumentError
     end
+  rescue RuntimeError => e
+    puts e.message
   rescue ArgumentError
     puts 'Input only 1 or 2 '
     retry
